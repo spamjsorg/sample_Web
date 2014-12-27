@@ -1,0 +1,11 @@
+{
+    "config": {
+        "vendor-dir": "src/main/webapp/lib"
+    },
+    "minimum-stability": "dev",
+    
+    "require": {
+    	"jqgeeks/bootstrap": "dev-master",
+    	"jqgeeks/utils": "dev-master"
+    }
+}
