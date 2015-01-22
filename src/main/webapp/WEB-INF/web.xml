@@ -35,25 +35,25 @@
 
 	<!-- Resource Filter -->
 
-	<filter>
-		<display-name>Files Minify Filter</display-name>
-		<filter-name>ResourceMinifyFilter</filter-name>
-		<filter-class>com.dfferentia.filter.ResourceMinifyFilter</filter-class>
-		<init-param>
-			<param-name>preserve-semi</param-name>
-			<param-value>true</param-value>
-		</init-param>
-	</filter>
-	<filter-mapping>
-		<filter-name>ResourceMinifyFilter</filter-name>
-		<url-pattern>*.js</url-pattern>
-		<dispatcher>REQUEST</dispatcher>
-	</filter-mapping>
-	<filter-mapping>
-		<filter-name>ResourceMinifyFilter</filter-name>
-		<url-pattern>*.css</url-pattern>
-		<dispatcher>REQUEST</dispatcher>
-	</filter-mapping>
+<!-- 	<filter> -->
+<!-- 		<display-name>Files Minify Filter</display-name> -->
+<!-- 		<filter-name>ResourceMinifyFilter</filter-name> -->
+<!-- 		<filter-class>com.dfferentia.filter.ResourceMinifyFilter</filter-class> -->
+<!-- 		<init-param> -->
+<!-- 			<param-name>preserve-semi</param-name> -->
+<!-- 			<param-value>true</param-value> -->
+<!-- 		</init-param> -->
+<!-- 	</filter> -->
+<!-- 	<filter-mapping> -->
+<!-- 		<filter-name>ResourceMinifyFilter</filter-name> -->
+<!-- 		<url-pattern>*.js</url-pattern> -->
+<!-- 		<dispatcher>REQUEST</dispatcher> -->
+<!-- 	</filter-mapping> -->
+<!-- 	<filter-mapping> -->
+<!-- 		<filter-name>ResourceMinifyFilter</filter-name> -->
+<!-- 		<url-pattern>*.css</url-pattern> -->
+<!-- 		<dispatcher>REQUEST</dispatcher> -->
+<!-- 	</filter-mapping> -->
 
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>

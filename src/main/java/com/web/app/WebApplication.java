@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.context.embedded.FilterRegistrationBean;
@@ -12,9 +13,10 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.servlet.DispatcherServlet;
+import org.springframework.stereotype.Controller;
+import org.springframework.context.annotation.FilterType;
 
 import com.utils.Log;
-import com.web.ResourceMinifyFilter;
 
 //import com.utils.Log;
 
@@ -28,7 +30,8 @@ import com.web.ResourceMinifyFilter;
  * @lastModified Aug 19, 2014
  */
 @EnableAutoConfiguration
-@ComponentScan(basePackages = { "com.web.controller", "com.web.config" })
+@ComponentScan(basePackages = { "com.web.controller", "com.web.config",
+		"com.web.app" })
 public class WebApplication extends SpringBootServletInitializer {
 
 	private static final Log LOG = new Log();
@@ -45,7 +48,10 @@ public class WebApplication extends SpringBootServletInitializer {
 		}
 
 	}
-
+	
+	@Autowired
+	AppClient appClient;
+	
 	/**
 	 * Register with FilterRegistrationBean, files which are to be minified or
 	 * if any other filter is to be added
@@ -60,14 +66,13 @@ public class WebApplication extends SpringBootServletInitializer {
 
 		ResourceMinifyFilter compressingFilter = new ResourceMinifyFilter();
 		FilterRegistrationBean registrationBean = new FilterRegistrationBean();
-		List<String> urlPatterns = new ArrayList<String>();
-		urlPatterns.add("*.js");
-		urlPatterns.add("*.css");
-		registrationBean.setUrlPatterns(urlPatterns);
+		registrationBean.setUrlPatterns(compressingFilter
+				.getResourcerlPatterns());
 		registrationBean.setFilter(compressingFilter);
 		return registrationBean;
 
 	}
+
 
 	/*
 	 * @Bean public ServletRegistrationBean

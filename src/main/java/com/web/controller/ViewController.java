@@ -5,12 +5,15 @@ import java.io.IOException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.web.app.AppClient;
 
 /**
  * Controller to handle all view related requests
@@ -21,8 +24,13 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class ViewController {
-	@RequestMapping(value = "/main", method = RequestMethod.GET)
-	public String home(ModelAndView modelAndView) throws IOException {
+
+	@Autowired
+	public AppClient appClient;
+	
+	@RequestMapping(value = "/home/**", method = RequestMethod.GET)
+	public String index(ModelAndView modelAndView) throws IOException {
+		//appClient.getProperties().getAppContext();
 		return "index";
 	}
 
