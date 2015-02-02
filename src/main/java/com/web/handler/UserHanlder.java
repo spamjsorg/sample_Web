@@ -2,8 +2,8 @@ package com.web.handler;
 
 import com.web.models.AuthModel;
 import com.web.models.UserBean;
-import com.webutils.AbstractHandler;
-import com.webutils.HandlerResponse;
+import com.webutils.abstracts.AbstractHandler;
+import com.webutils.abstracts.HandlerResponse;
 import com.webutils.annotations.ActionHandler;
 import com.webutils.annotations.HandlerAction;
 

@@ -6,7 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import com.webutils.AsbtractResourceMinifyFilter;
+import com.webutils.app.WebAppResourceMinifyFilter;
 
 /**
  * Servlet Filter to Minify JavaScript and CSS files on the fly, currently it
@@ -21,7 +21,7 @@ import com.webutils.AsbtractResourceMinifyFilter;
  * @version 1.0
  */
 @SuppressWarnings("unused")
-public class ResourceMinifyFilter extends AsbtractResourceMinifyFilter {
+public class ResourceMinifyFilter extends WebAppResourceMinifyFilter {
 	private static final String RES_PATH_MATCH = "/(app/)*resources[0-9.]*/";
 	private static final String RES_PATH_REPLACE = "/resources/";
 	private static final String LIB_PATH_MATCH = "/(app/)*lib[0-9.]*/";
@@ -31,7 +31,6 @@ public class ResourceMinifyFilter extends AsbtractResourceMinifyFilter {
 
 	private static Map<String, String> cache = new Hashtable<String, String>();
 
-	@Override
 	public String filterURI(String requestURI) {
 		return requestURI.replaceAll(RES_PATH_MATCH, RES_PATH_REPLACE);
 		// .replaceAll(LIB_PATH_MATCH, LIB_PATH_REPLACE);
@@ -42,12 +41,8 @@ public class ResourceMinifyFilter extends AsbtractResourceMinifyFilter {
 	 * 
 	 * @see com.webutils.AsbtractResourceMinifyFilter#getCache()
 	 */
-	@Override
 	public Map<String, String> getCache() {
 		return cache;
-	}
-
-	public void destroy() {
 	}
 
 }

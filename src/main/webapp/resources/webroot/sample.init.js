@@ -5,6 +5,7 @@ utils.define("sample.init").as(function(init) {
 	utils.require(":jqgeeks/mvc",":jqgeeks/tunnel",":sample/login",":sample/chat");
 	
 	var loginMod = utils.module("sample.login");
+	var stomp = utils.module('tunnel.stomp');
 	/**
 	 * _ready_ method is triggered when module is loaded and
 	 * doc is ready to handler DOM operations
@@ -22,6 +23,7 @@ utils.define("sample.init").as(function(init) {
 				chatIns.init({
 					id : '#chatSection'
 				})
+				stomp.connect();
 			}
 		});
 		loginIns.init({

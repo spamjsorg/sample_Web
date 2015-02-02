@@ -2,7 +2,7 @@ package com.web.handler;
 
 import com.web.models.Greeting;
 import com.web.models.HelloMessage;
-import com.webutils.AbstractHandler;
+import com.webutils.abstracts.AbstractHandler;
 import com.webutils.annotations.ActionHandler;
 import com.webutils.annotations.HandlerAction;
 

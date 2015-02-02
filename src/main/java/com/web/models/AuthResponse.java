@@ -1,6 +1,6 @@
 package com.web.models;
 
-import com.webutils.AbstractResponse;
+import com.webutils.abstracts.AbstractResponse;
 
 public class AuthResponse extends AbstractResponse {
 

@@ -27,10 +27,11 @@ public class ViewController {
 
 	@Autowired
 	public AppClient appClient;
-	
+
 	@RequestMapping(value = "/home/**", method = RequestMethod.GET)
 	public String index(ModelAndView modelAndView) throws IOException {
-		//appClient.getProperties().getAppContext();
+		// appClient.getProperties().getAppContext();
+		AppClient.getContext().getUser().isValid(false);
 		return "index";
 	}
 

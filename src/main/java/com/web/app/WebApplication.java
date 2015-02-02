@@ -1,22 +1,21 @@
 package com.web.app;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+
+import javax.websocket.Endpoint;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.context.embedded.FilterRegistrationBean;
-import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.DispatcherServlet;
-import org.springframework.stereotype.Controller;
-import org.springframework.context.annotation.FilterType;
+import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
 
 import com.utils.Log;
+import com.webutils.app.WebApp;
+import com.webutils.app.WebAppSocketConfig;
 
 //import com.utils.Log;
 
@@ -32,9 +31,9 @@ import com.utils.Log;
 @EnableAutoConfiguration
 @ComponentScan(basePackages = { "com.web.controller", "com.web.config",
 		"com.web.app" })
-public class WebApplication extends SpringBootServletInitializer {
+public class WebApplication extends WebApp {
 
-	private static final Log LOG = new Log();
+	public static final Log LOG = new Log();
 
 	public static void main(String[] args) {
 
@@ -48,37 +47,7 @@ public class WebApplication extends SpringBootServletInitializer {
 		}
 
 	}
-	
+
 	@Autowired
 	AppClient appClient;
-	
-	/**
-	 * Register with FilterRegistrationBean, files which are to be minified or
-	 * if any other filter is to be added
-	 * 
-	 * Refer : http://www.leveluplunch.com/blog/2014/04/01/spring-boot-
-	 * configure-servlet-mapping-filters/
-	 * 
-	 * @return
-	 */
-	@Bean
-	public FilterRegistrationBean filterRegistrationBean() {
-
-		ResourceMinifyFilter compressingFilter = new ResourceMinifyFilter();
-		FilterRegistrationBean registrationBean = new FilterRegistrationBean();
-		registrationBean.setUrlPatterns(compressingFilter
-				.getResourcerlPatterns());
-		registrationBean.setFilter(compressingFilter);
-		return registrationBean;
-
-	}
-
-
-	/*
-	 * @Bean public ServletRegistrationBean
-	 * dispatcherRegistration(DispatcherServlet dispatcherServlet) {
-	 * ServletRegistrationBean registration = new ServletRegistrationBean(
-	 * dispatcherServlet); registration.addUrlMappings("/page/*",
-	 * "/whatever2/*"); return registration; }
-	 */
 }

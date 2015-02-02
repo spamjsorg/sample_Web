@@ -19,12 +19,15 @@ utils.define("sample.chat").extend('utils.viewmodel').as(function(chat,_instance
 	// DOM events
 	_instance_.send_clicked = function(e){
 		var self = this;
-		server.post({
+		stomp.send({
 			api : "chat/send",
 			data : self.model().message
-		}).done(function(data,resp){
+		}).on(function(data,resp){
+			console.log("data-on",data)
 			self.model().message.text = "";
 			self.model().msgs.push(data);
+		}).done(function(data){
+			console.log("data-done",data)
 		});
 //		stomp.on('onchatmessage',function(cm){
 //			console.log('cm',cm);
@@ -32,6 +35,6 @@ utils.define("sample.chat").extend('utils.viewmodel').as(function(chat,_instance
 	};
 	
 	chat._ready_ = function(){
-		stomp.connect();
+		//stomp.connect();
 	};
 });

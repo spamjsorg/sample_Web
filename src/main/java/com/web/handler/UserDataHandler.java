@@ -1,15 +1,12 @@
 package com.web.handler;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.messaging.simp.SimpMessagingTemplate;
-
 import com.web.models.HelloMessage;
 import com.web.models.Name;
 import com.web.models.UserDetails;
-import com.webutils.AbstractHandler;
+import com.webutils.abstracts.AbstractHandler;
 import com.webutils.annotations.ActionHandler;
 import com.webutils.annotations.HandlerAction;
-import com.web.app.MessageClient;
+import com.webutils.app.StompTunnelClient;
 
 /**
  * THis is sampe test handler.
@@ -22,8 +19,6 @@ import com.web.app.MessageClient;
 public class UserDataHandler extends AbstractHandler {
 
 	public static UserDetails user;
-	@Autowired
-	private SimpMessagingTemplate templ;
 
 	static {
 		user = new UserDetails();
@@ -54,7 +49,7 @@ public class UserDataHandler extends AbstractHandler {
 			user.getName().setFname(message.getName().getFname());
 			//MessageClient.sendToUser("testuser", "details_updated", user);
 			//MessageClient.send("details_updated", user);
-			MessageClient.sendToAll("all_updated", user);
+			StompTunnelClient.sendToAll("all_updated", user);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

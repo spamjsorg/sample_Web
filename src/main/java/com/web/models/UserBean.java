@@ -1,6 +1,6 @@
 package com.web.models;
 
-import com.webutils.AbstractUser;
+import com.webutils.abstracts.AbstractUser;
 import com.webutils.annotations.RxModel;
 import com.webutils.annotations.RxModel.ModelType;
 

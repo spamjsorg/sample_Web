@@ -150,57 +150,6 @@
         ]
     },
     {
-        "name": "jqgeeks/utils",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://gitlab.com/jqgeeks/utils.git",
-            "reference": "6f94130fa3359a16c21a99a1629b2d7b0966390f"
-        },
-        "require": {
-            "jqgeeks/jquery": ">=1.3.0"
-        },
-        "time": "2015-01-06 22:42:51",
-        "type": "library",
-        "installation-source": "source",
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "description": "JQuery Utilitties compatible with rudrax framework",
-        "keywords": [
-            "api",
-            "rudra"
-        ]
-    },
-    {
-        "name": "jqgeeks/mvc",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://gitlab.com/jqgeeks/mvc.git",
-            "reference": "3cee99923f9aa78ac7d9112123b6506bcf150307"
-        },
-        "require": {
-            "jqgeeks/utils": ">=1.0.0",
-            "webmodules/rivets": ">=0.7.1"
-        },
-        "time": "2015-01-06 22:43:37",
-        "type": "library",
-        "installation-source": "source",
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "description": "A native observer utility",
-        "keywords": [
-            "api",
-            "rudra"
-        ]
-    },
-    {
         "name": "jqgeeks/observable",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -220,32 +169,6 @@
             "MIT"
         ],
         "description": "A native observer utility",
-        "keywords": [
-            "api",
-            "rudra"
-        ]
-    },
-    {
-        "name": "jqgeeks/tunnel",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://gitlab.com/jqgeeks/tunnel.git",
-            "reference": "348774c262938bda2b669aa7930d02f5ac0f234e"
-        },
-        "require": {
-            "jqgeeks/jquery": ">=1.3.0",
-            "jqgeeks/utils": ">=1.0.0"
-        },
-        "time": "2015-01-07 20:47:44",
-        "type": "library",
-        "installation-source": "source",
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "description": "JQuery Utilitties compatible with rudrax framework",
         "keywords": [
             "api",
             "rudra"
@@ -294,6 +217,83 @@
             "jqgeeks/vutils": "dev-master"
         },
         "time": "2014-12-03 12:04:59",
+        "type": "library",
+        "installation-source": "source",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "JQuery Utilitties compatible with rudrax framework",
+        "keywords": [
+            "api",
+            "rudra"
+        ]
+    },
+    {
+        "name": "jqgeeks/utils",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://gitlab.com/jqgeeks/utils.git",
+            "reference": "b2736d85da7d4cdcb2e67bdf7c6d5b5bedf903a7"
+        },
+        "require": {
+            "jqgeeks/jquery": ">=1.3.0"
+        },
+        "time": "2015-01-22 19:42:47",
+        "type": "library",
+        "installation-source": "source",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "JQuery Utilitties compatible with rudrax framework",
+        "keywords": [
+            "api",
+            "rudra"
+        ]
+    },
+    {
+        "name": "jqgeeks/mvc",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://gitlab.com/jqgeeks/mvc.git",
+            "reference": "eaf254a325f3e7933c4c20b549095d8916d3bb2a"
+        },
+        "require": {
+            "jqgeeks/utils": ">=1.0.0",
+            "webmodules/rivets": ">=0.7.1"
+        },
+        "time": "2015-01-22 19:43:30",
+        "type": "library",
+        "installation-source": "source",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "A native observer utility",
+        "keywords": [
+            "api",
+            "rudra"
+        ]
+    },
+    {
+        "name": "jqgeeks/tunnel",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://gitlab.com/jqgeeks/tunnel.git",
+            "reference": "c971b06648e23a8de699698bac440e882346aeb3"
+        },
+        "require": {
+            "jqgeeks/jquery": ">=1.3.0",
+            "jqgeeks/utils": ">=1.0.0"
+        },
+        "time": "2015-01-22 17:58:41",
         "type": "library",
         "installation-source": "source",
         "notification-url": "https://packagist.org/downloads/",

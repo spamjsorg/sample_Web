@@ -1,13 +1,11 @@
 package com.web.handler;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
-import com.web.app.MessageClient;
 import com.web.models.ChatMessage;
 import com.web.models.UserBean;
-import com.webutils.AbstractHandler;
+import com.webutils.abstracts.AbstractHandler;
 import com.webutils.annotations.ActionHandler;
 import com.webutils.annotations.HandlerAction;
+import com.webutils.app.StompTunnelClient;
 
 /**
  * THis is sampe test handler.
@@ -19,14 +17,11 @@ import com.webutils.annotations.HandlerAction;
 @ActionHandler(name = "chat")
 public class ChatHanlder extends AbstractHandler {
 	
-	@Autowired
-	MessageClient messageClient;
-
 	@HandlerAction(name = "send")
 	public ChatMessage auth(ChatMessage model, UserBean user) {
 
 		System.out.println(model.getText());
-		MessageClient.send("messages", model);
+		StompTunnelClient.send(model);
 		return model;
 	}
 }
