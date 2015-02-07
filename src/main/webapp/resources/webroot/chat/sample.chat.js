@@ -28,6 +28,8 @@ utils.define("sample.chat").extend('utils.viewmodel').as(function(chat,_instance
 			self.model().msgs.push(data);
 		}).done(function(data){
 			console.log("data-done",data)
+		}).fail(function(data){
+			console.log("data-fail",data)
 		});
 //		stomp.on('onchatmessage',function(cm){
 //			console.log('cm',cm);
