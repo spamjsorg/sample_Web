@@ -24,6 +24,10 @@ public class UserBean extends AbstractUser {
 	public void setLastName(String newLastName) {
 		lastName = newLastName;
 	}
+	
+	public int getSessionTimout() {
+		return 30;
+	}
 
 	@Override
 	public void auth(String userName, String passWord) {

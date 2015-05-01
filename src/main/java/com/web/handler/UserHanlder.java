@@ -35,4 +35,23 @@ public class UserHanlder extends AbstractHandler {
 		}
 		return model;
 	}
+	
+	@HandlerAction(name = "isValid")
+	public AuthModel isValid(AuthModel model, UserBean user, HandlerResponse resp) {
+
+		if (user.isValid()) {
+			//model.setStatus("Already Validated");
+			resp.setSuccess(true);
+		} else {
+			resp.setSuccess(false);
+			//model.setStatus("Who R U ?");
+		}
+		return model;
+	}
+	
+	@HandlerAction(name = "logout")
+	public AuthModel logout(AuthModel model, UserBean user, HandlerResponse resp) {
+		user.isValid(Boolean.FALSE);
+		return model;
+	}
 }

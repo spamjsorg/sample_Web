@@ -26,12 +26,18 @@ import com.web.app.AppClient;
 public class ViewController {
 
 	@Autowired
-	public AppClient appClient;
+	public AppClient appClient;	
 
-	@RequestMapping(value = "/home/**", method = RequestMethod.GET)
-	public String index(ModelAndView modelAndView) throws IOException {
+	@RequestMapping(value = "/client/**", method = RequestMethod.GET)
+	public String clientIndex(ModelAndView modelAndView) throws IOException {
 		// appClient.getProperties().getAppContext();
-		AppClient.getContext().getUser().isValid(false);
+		//AppClient.getContext().getUser().isValid(false);
+		return "client";
+	}
+	@RequestMapping(value = "/support/**", method = RequestMethod.GET)
+	public String supprtIndex(ModelAndView modelAndView) throws IOException {
+		// appClient.getProperties().getAppContext();
+		//AppClient.getContext().getUser().isValid(false);
 		return "index";
 	}
 

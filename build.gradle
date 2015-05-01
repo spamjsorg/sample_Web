@@ -3,10 +3,15 @@ buildscript {
 		mavenLocal()
 		mavenCentral()
 		jcenter()
+//		maven {
+//            url uri('../libs/php-build-plugin/repo')
+//        }
 	}
 	dependencies { classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.4.RELEASE") 
 		classpath ('org.ajoberstar:gradle-git:0.2.3')
 		classpath "com.github.robfletcher:compass-gradle-plugin:2.0.3"
+		//classpath 'org.swissphpfriends:php-build-plugin:1.0-SNAPSHOT'
+		//classpath 'com.dubture:composer-java-api:0.0.3'
 	}
 }
 
@@ -15,6 +20,7 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
 apply plugin: "com.github.robfletcher.compass"
+//apply plugin: 'php-build'
 
 jar {
 	baseName = 'gs-messaging-stomp-websocket'
@@ -43,8 +49,8 @@ task cloneGitRepo(type: GitClone) {
 
 //Compass plugin config
 compass {
-    cssDir = file('src/main/webapp')
-    sassDir = file('src/main/webapp')
+    cssDir = file('src/main/webapp/dist')
+    sassDir = file('src/main/webapp/resources')
 }
 
 dependencies {
@@ -65,9 +71,6 @@ dependencies {
 	compile("org.springframework:spring-messaging")
 	compile("org.reflections:reflections:0.9.9-RC1")
 	//compile 'org.springframework.session:spring-session:1.0.0.RELEASE'
-
-	//Minifier
-	//compile 'com.yahoo.platform.yui:yuicompressor:2.3.6'
 
 
 	// TODO: why are these required? need classification
